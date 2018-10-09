@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerApp.Data\CustomerApp.Data.csproj" />
+    <ProjectReference Include="..\CustomerApp.Domain\CustomerApp.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
