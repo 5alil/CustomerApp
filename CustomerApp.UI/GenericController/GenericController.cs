@@ -35,14 +35,34 @@ namespace CustomerApp.UI.GenericController
             var result = _mapper.Map<List<TDto>>(source);
             return result;
         }
-
         // GET api/entities/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    T source = _entityService.Get(id);
-        //    TDto res = _mapper.Map<TDto>(source);
-        //    return "string";
-        //}
+        [HttpGet("{id}")]
+        public TDto GetById(int id)
+        {
+            T source = _entityService.Get(id);
+            TDto res = _mapper.Map<TDto>(source);
+            return res;
+        }
+        // POST api/entities
+        [HttpPost]
+        public void Post(TDto entity)
+        {
+            T ent = _mapper.Map<T>(entity);
+            _entityService.Create(ent);
+        }
+        // PUT api/entities/5
+        [HttpPut("{id}")]
+        public void Put(int id, TDto entity)
+        {
+            T ent = _mapper.Map<T>(entity);
+            _entityService.Update(ent, id);
+        }
+        // DELETE api/entities/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            T ent = _entityService.Get(id);
+            _entityService.MarkAsDeleted(ent,id);
+        }
     }
 }

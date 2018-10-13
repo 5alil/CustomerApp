@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CustomerApp.Domain
 {
-    public class Customer : IAuditable
+    public class Customer : IAuditable,IDeletable
     {
         public int Id { get; set; }
         public string FullName { get; set; }

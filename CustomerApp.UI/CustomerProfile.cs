@@ -14,6 +14,7 @@ namespace CustomerApp.UI
         public CustomerProfile()
         {
             CreateMap<Customer, CustomerDto>();
+            CreateMap<CustomerDto, Customer>();
         }
     }
 }

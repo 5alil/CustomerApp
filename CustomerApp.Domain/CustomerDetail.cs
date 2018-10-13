@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CustomerApp.Domain.Audit;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CustomerApp.Domain
 {
-    public class CustomerDetail
+    public class CustomerDetail : IDeletable
     {
         public int Id { get; set; }
         public string AddressLine1 { get; set; }
@@ -12,9 +13,9 @@ namespace CustomerApp.Domain
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
-
+        public bool IsDeleted { get; set; }
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
-
+        
     }
 }

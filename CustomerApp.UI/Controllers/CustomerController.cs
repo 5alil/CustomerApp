@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using CustomerApp.Domain;
 using CustomerApp.Dto.Customer;
 using CustomerApp.Repository.IRepository;
 using CustomerApp.Repository.UnitOfWork;
 using CustomerApp.Services.Services;
 using CustomerApp.UI.GenericController;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerApp.UI.Controllers

@@ -4,7 +4,7 @@ using CustomerApp.Services.IService;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
+using System.Reflection;
 
 namespace CustomerApp.Services.Services
 {
@@ -63,6 +63,14 @@ namespace CustomerApp.Services.Services
             _unitOfWork.Commit();
         }
 
-       
+        public virtual void MarkAsDeleted(T entity, object key)
+        {
+            if (entity == null) throw new ArgumentNullException("entity");
+
+            Type type = typeof(T);
+            PropertyInfo propertyInfo = type.GetProperty("IsDeleted");
+            propertyInfo.SetValue(entity, Convert.ChangeType(true, propertyInfo.PropertyType), null);
+            Update(entity, key);
+        }
     }
 }

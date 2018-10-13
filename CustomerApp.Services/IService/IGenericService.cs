@@ -13,6 +13,7 @@ namespace CustomerApp.Services.IService
         IEnumerable<T> GetAll();
         void Create(T entity);
         void Update(T entity, object key);
-        void Delete(T entity);  
+        void Delete(T entity);
+        void MarkAsDeleted(T entity, object key);
     }
 }
